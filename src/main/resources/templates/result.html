@@ -7,9 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <ul th:each="numberVal: ${randomNumsResult}">
-        <li th:text="${numberVal}"></li>
+    <!-- Listing in a form of unordered list
+        <ul th:each="numberVal: ${randomNumsResult}">
+            <li th:text="${numberVal}"></li>
+            <img th:src="@{${'/images/' + numberVal}}" width = 200 height =200/>
+        </ul>
+    -->
+    <span th:each="numberVal: ${randomNumsResult}">
         <img th:src="@{${'/images/' + numberVal}}" width = 200 height =200/>
-    </ul>
+    </span>
 </body>
 </html>
