@@ -32,6 +32,10 @@ public class GenerateController {
     public String generateNumbers(@ModelAttribute Generate generate, Model model) {
         logger.info("From the form" + generate.getNumberVal());
         int numberRandomNumbers = generate.getNumberVal();
+        if (numberRandomNumbers > 10) {
+            model.addAttribute("errorMessage", "exceeded 10 numbers limit!");
+            return "error";
+        }
         String[] imgNumbers = {
             "number1.jpeg", "number2.jpeg", "number3.jpeg", "number4.jpeg", "number5.jpeg", 
             "number6.jpeg", "number7.jpeg", "number8.jpeg", "number9.jpeg", "number10.jpeg"
