@@ -7,10 +7,15 @@
     <title>Workshop12</title>
 </head>
 <body>
+    <!-- 
+        action="#" overrides the original html action
+        th:action has to link to the path specified in the @Postmapping handler
+        method="post" will map to the @Postmapping handler in the controller
+    -->
     <h1>How many numbers do you wish to generate?</h1>
     <form
      action="#"
-     th:action="@{/generate}"
+     th:action="@{/generate}" 
      th:object="${generate}"
      method="post"
     >
